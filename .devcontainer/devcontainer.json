@@ -24,9 +24,6 @@
   // "postCreateCommand": "rustc --version",
 
   // Configure tool-specific properties.
-  "features": {
-    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
-  },
   "customizations": {
     "jetbrains": {
       "backend": "RustRover",
