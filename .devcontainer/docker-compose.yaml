@@ -1,6 +1,6 @@
 services:
   devcontainer:
     build:
-      context: .
+      context: ../
       dockerfile: .devcontainer/Dockerfile
     container_name: diy_electronics_devcontainer
