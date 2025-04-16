@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/rust:1.0.21-1-bookworm
+FROM mcr.microsoft.com/devcontainers/rust:1-1-bookworm
 
 
 # Install required packages for ESP-IDF and ESP32 toolchain(documentation: https://github.com/esp-rs/esp-idf-template#prerequisites)
