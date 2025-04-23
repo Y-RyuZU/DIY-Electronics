@@ -5,6 +5,15 @@
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
   "dockerComposeFile": "docker-compose.yaml",
   "service": "devcontainer",
+  "runArgs": [
+    "--privileged",
+    "--device=/dev/vhci",
+    "--device=/dev/usbmon0",
+    "--device=/dev/ttyUSB0"
+  ],
+  "mounts": [
+    "source=/dev/,target=/dev/,type=bind"
+  ],
   // Use 'mounts' to make the cargo cache persistent in a Docker Volume.
   // "mounts": [
   // 	{
@@ -26,6 +35,10 @@
   // Configure tool-specific properties.
   "customizations": {
     "jetbrains": {
+      "settings": {
+        "com.intellij:app:BuiltInServerOptions.builtInServerPort": 56253,
+        "com.intellij:app:HttpConfigurable.use_proxy_pac": true
+      },
       "backend": "RustRover",
       "plugins": [
         "Key Promoter X",
