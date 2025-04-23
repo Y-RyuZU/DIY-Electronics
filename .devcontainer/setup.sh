@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+cd ~
+
 echo "Installing espup..."
 cargo install espup
 espup install
