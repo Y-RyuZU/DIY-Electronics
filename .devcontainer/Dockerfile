@@ -18,6 +18,6 @@ RUN apt-get update && apt-get install -y \
     libssl-dev \
     dfu-util \
     libusb-1.0-0 \
-    libsub-1.0.0-dev \
+    libusb-1.0.0-dev \
     libudev-dev \
     usbip
