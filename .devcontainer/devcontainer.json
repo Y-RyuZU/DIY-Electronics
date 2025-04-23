@@ -23,7 +23,7 @@
       "version": "latest"
     },
   },
-  "postCreateCommand": "./.devcontainer/setup.sh",
+  "postCreateCommand": "bash .devcontainer/setup.sh",
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
 

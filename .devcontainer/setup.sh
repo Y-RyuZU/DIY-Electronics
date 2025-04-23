@@ -3,7 +3,7 @@ set -e
 
 echo "Installing espup..."
 cargo install espup
-espup install -y
+espup install
 
 echo "Installing espflash & ldproxy..."
 cargo install espflash
