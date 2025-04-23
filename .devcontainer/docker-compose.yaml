@@ -4,3 +4,8 @@ services:
       context: ../
       dockerfile: .devcontainer/Dockerfile
     container_name: diy_electronics_devcontainer
+    devices:
+      - /dev/ttyACM0:/dev/ttyACM0
+    privileged: true
+    tty: true
+    stdin_open: true
