@@ -22,8 +22,8 @@ RUN apt-get update && apt-get install -y \
     libusb-1.0-0-dev \
     libudev-dev \
     build-essential \
-    linux-tools-$(uname -r) linux-cloud-tools-$(uname -r) && \
+    linux-tools-common linux-tools-generic && \
+    ln -s /usr/lib/linux-tools/*/usbip /usr/bin/usbip && \
     rm -rf /var/lib/apt/lists/*
 
 ENV PATH="/usr/lib/linux-tools-$(uname -r):$PATH"
-RUN ln -s /usr/lib/linux-tools-$(uname -r)/usbip /usr/bin/usbip
