@@ -6,9 +6,7 @@
   "dockerComposeFile": "docker-compose.yaml",
   "service": "devcontainer",
   "runArgs": [
-    "--privileged",
     "--device=/dev/vhci",
-    "--device=/dev/usbmon0",
     "--device=/dev/ttyUSB0"
   ],
   "mounts": [
@@ -24,8 +22,12 @@
   // ]
 
   // Features to add to the dev container. More info: https://containers.dev/features.
-  // "features": {},
-
+  "features": {
+    "ghcr.io/devcontainers/features/rust:1": {
+      "version": "latest"
+    },
+  },
+  "postCreateCommand": "cargo install espup && espup install -y",
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
 

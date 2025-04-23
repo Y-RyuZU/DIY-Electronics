@@ -1,7 +1,9 @@
-FROM mcr.microsoft.com/devcontainers/rust:1-1-bullseye
+FROM ubuntu:24.04
 
-# Install required packages for ESP-IDF and ESP32 toolchain(documentation: https://github.com/esp-rs/esp-idf-template#prerequisites)
+ENV DEBIAN_FRONTEND=noninteractive
+
 RUN apt-get update && apt-get install -y \
+    curl \
     git \
     wget \
     pkg-config \
@@ -17,7 +19,7 @@ RUN apt-get update && apt-get install -y \
     libffi-dev \
     libssl-dev \
     dfu-util \
-    libusb-1.0-0 \
-    libsub-1.0.0-dev \
+    libusb-1.0-0-dev \
     libudev-dev \
-    usbip
+    usbip \
+    build-essential && rm -rf /var/lib/apt/lists/*
