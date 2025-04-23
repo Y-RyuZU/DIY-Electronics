@@ -21,5 +21,9 @@ RUN apt-get update && apt-get install -y \
     dfu-util \
     libusb-1.0-0-dev \
     libudev-dev \
-    usbip \
-    build-essential && rm -rf /var/lib/apt/lists/*
+    build-essential \
+    linux-tools-common linux-tools-generic && \
+    ln -s /usr/lib/linux-tools/*/usbip /usr/bin/usbip && \
+    rm -rf /var/lib/apt/lists/*
+
+ENV PATH="/usr/lib/linux-tools-$(uname -r):$PATH"
