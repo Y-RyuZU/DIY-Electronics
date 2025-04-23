@@ -23,7 +23,7 @@ RUN apt-get update && apt-get install -y \
     libudev-dev \
     build-essential \
     linux-tools-common linux-tools-generic && \
-    ln -s /usr/lib/linux-tools/*/usbip /usr/bin/usbip && \
+    ln -sf /usr/lib/linux-tools/*/usbip /usr/bin/usbip && \
     rm -rf /var/lib/apt/lists/*
 
 ENV PATH="/usr/lib/linux-tools-$(uname -r):$PATH"
